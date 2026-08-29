@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roma Bakery | Padaria Artesanal no Rio</title>
+    <style>
+        /* Tipografia Geral */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap');
+
+        :root {
+            --color-dark: #1a1a1a;
+            --color-light: #ffffff;
+            --color-cream: #f7f5f0;
+            --color-accent: #3a3a3a;
+            --color-text-body: #4a4a4a;
+            --transition-btn: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+            --transition-link: width 0.2s ease-in-out;
+            --transition-menu: top 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--color-text-body);
+            background-color: var(--color-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-style: normal;
+            color: var(--color-dark);
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: inherit;
+        }
+
+        /* Estrutura de cabeçalho em duas camadas */
+        .top-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            font-size: 0.8rem;
+            z-index: 100;
+        }
+
+        .top-bar-left, .top-bar-right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .cta-btn {
+            background-color: var(--color-light);
+            color: var(--color-dark);
+            padding: 4px 16px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-btn);
+        }
+
+        .cta-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        .main-nav {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: center; /* Logo centralizado */
+            align-items: center;
+            padding: 0 40px;
+            z-index: 90;
+        }
+
+        .nav-menu {
+            position: absolute;
+            right: 40px;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: var(--color-light);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            position: relative;
+        }
+
+        /* Hover em links de texto */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-light);
+            transition: var(--transition-link);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Selo Circular - atravessa borda */
+        .logo-badge {
+            position: absolute;
+            top: 10px; /* Sobrepõe barra nav e hero */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 120px;
+            background-color: var(--color-cream);
+            color: var(--color-dark);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.1;
+            z-index: 110;
+        }
+
+        /* Hero full-bleed */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--color-light);
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-title-wrapper {
+            flex: 1;
+        }
+
+        .signature-line {
+            width: 40px;
+            height: 2px;
+            background-color: var(--color-light);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            color: var(--color-light);
+            font-size: 4.5rem;
+            line-height: 1.1;
+            max-width: 600px;
+        }
+
+        .hero-divider {
+            width: 1px;
+            height: 120px;
+            background-color: rgba(255, 255, 255, 0.3);
+            margin-top: 20px;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 300px;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        /* Alternância de blocos de cor sólida */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-light {
+            background-color: var(--color-light);
+        }
+
+        .section-cream {
+            background-color: var(--color-cream);
+        }
+
+        .section-dark {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-dark h2, .section-dark h3 {
+            color: var(--color-light);
+        }
+
+        /* Elemento decorativo sutil na seção escura */
+        .deco-arches {
+            position: absolute;
+            bottom: -10%;
+            right: -5%;
+            width: 600px;
+            height: 600px;
+            border: 2px solid rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .deco-arches::before, .deco-arches::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+        }
+        .deco-arches::before { width: 400px; height: 400px; }
+        .deco-arches::after { width: 200px; height: 200px; }
+
+
+        /* Divisores de seção decorativos */
+        .divider-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 15px;
+            margin-bottom: 60px;
+        }
+
+        .line-short {
+            width: 1px;
+            height: 30px;
+            background-color: currentColor;
+        }
+
+        .line-long {
+            width: 1px;
+            height: 60px;
+            background-color: currentColor;
+        }
+
+        .divider-badge-wrapper {
+            position: relative;
+            height: 0;
+            display: flex;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .divider-badge {
+            position: absolute;
+            top: -40px; /* metade da altura do selo */
+            width: 80px;
+            height: 80px;
+            background-color: var(--color-dark);
+            color: var(--color-cream);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+
+        /* Galeria de produtos sem cards */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0; /* sem gap largo */
+        }
+
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 40px 40px;
+            border-right: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .gallery-item:last-child {
+            border-right: none;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .gallery-caption {
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--color-text-body);
+        }
+
+        /* Lista de preços em texto corrido */
+        .menu-section {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .menu-category {
+            margin-bottom: 50px;
+        }
+
+        .menu-category h3 {
+            margin-bottom: 30px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .menu-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 60px;
+            text-align: center;
+        }
+
+        .menu-item {
+            font-size: 1rem;
+        }
+
+        /* Blocos de texto com fundo destacado (offset post-it) */
+        .about-block-container {
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+        }
+
+        .highlight-text-block {
+            position: relative;
+            max-width: 500px;
+            padding: 40px;
+            z-index: 2;
+        }
+
+        .highlight-bg {
+            position: absolute;
+            top: 20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            background-color: #ebe7de; /* Cor sólida suave */
+            z-index: -1;
+        }
+
+        .highlight-icon {
+            margin-bottom: 20px;
+            stroke: var(--color-dark);
+            stroke-width: 1;
+            fill: none;
+        }
+
+        .highlight-text-block p {
+            font-size: 1.1rem;
+            color: var(--color-dark);
+        }
+
+        /* Fotos em colunas assimétricas */
+        .asymmetric-gallery {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            margin-top: 60px;
+        }
+
+        .asymmetric-col {
+            flex: 1;
+        }
+
+        .asymmetric-col.tall img {
+            height: 600px;
+        }
+
+        .asymmetric-col.short img {
+            height: 400px;
+            margin-top: 100px; /* cria o visual escalonado */
+        }
+
+        .asymmetric-gallery img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        /* Formulários */
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 0;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 0;
+            color: var(--color-light);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-bottom-color: var(--color-light);
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-submit {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background-color: transparent;
+            color: var(--color-light);
+            border: 1px solid var(--color-light);
+            border-radius: 2px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition-btn);
+        }
+
+        .btn-submit:hover {
+            background-color: var(--color-light);
+            color: var(--color-dark);
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .hero-divider {
+                width: 100%;
+                height: 1px;
+                margin: 20px 0;
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+                padding: 40px 0;
+            }
+            .menu-list {
+                grid-template-columns: 1fr;
+            }
+            .asymmetric-gallery {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .asymmetric-col.short img {
+                margin-top: 0;
+            }
+            .top-bar {
+                display: none;
+            }
+            .nav-menu {
+                display: none; /* Seria substituído pelo toggle do painel mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header 2 camadas -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <span>Rua Visconde de Cairú, 26 - Maracanã</span>
+        </div>
+        <div class="top-bar-right">
+            <span>Ter - Dom, 08h às 20h</span>
+            <a href="#" class="cta-btn">Peça Online</a>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <div class="logo-badge">
+            ROMA<br>BAKERY
+        </div>
+        <div class="nav-menu">
+            <a href="#menu" class="nav-link">Cardápio</a>
+            <a href="#about" class="nav-link">A Padaria</a>
+            <a href="#contact" class="nav-link">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Hero Full Bleed -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-title-wrapper">
+                <div class="signature-line"></div>
+                <h1>Padaria artesanal no coração do Rio.</h1>
+            </div>
+            <div class="hero-divider"></div>
+            <div class="hero-text">
+                <p>Viennoiseries, pães de fermentação natural e brunch servidos diariamente no Maracanã.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transição Abrupta para Seção Clara -->
+    <section class="section-light" id="about">
+        <!-- Divisor Decorativo Central -->
+        <div class="divider-wrapper">
+            <div class="line-short"></div>
+            <div class="line-long"></div>
+            <div class="line-short"></div>
+        </div>
+
+        <div class="about-block-container">
+            <div class="highlight-text-block">
+                <div class="highlight-bg"></div>
+                <!-- Ícone linha simples -->
+                <svg class="highlight-icon" width="32" height="32" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <p>Nossa missão é resgatar o tempo das coisas. A fermentação longa, o folhado perfeito da viennoiserie, a pausa pro café. Mais do que pão, servimos momentos.</p>
+            </div>
+        </div>
+
+        <!-- Fotos Assimétricas -->
+        <div class="asymmetric-gallery">
+            <div class="asymmetric-col tall">
+                <img src="https://images.unsplash.com/photo-1596560370425-45a8e0f39385?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Processo de fermentação">
+            </div>
+            <div class="asymmetric-col short">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Café e Croissant">
+            </div>
+        </div>
+    </section>
+
+    <!-- Transição Abrupta com Selo Repetido -->
+    <div class="divider-badge-wrapper">
+        <div class="divider-badge">RB</div>
+    </div>
+
+    <!-- Seção Creme: Galeria de Produtos sem Cards -->
+    <section class="section-cream" id="gallery">
+        <h2 style="text-align: center; margin-bottom: 60px; font-size: 2.5rem;">Especialidades</h2>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1627915570222-38d5e893e230?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Croissant">
+                <div class="gallery-caption">Croissant Clássico na Manteiga</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pão de Fermentação Natural">
+                <div class="gallery-caption">Pão de Fermentação Natural</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1601000938259-9e92002320b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Espiral de Chocolate">
+                <div class="gallery-caption">Espiral de Creme e Chocolate Meio-Amargo</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Escura com Decoração Sutil e Lista de Preços em Texto -->
+    <section class="section-dark" id="menu">
+        <div class="deco-arches"></div>
+
+        <div class="divider-wrapper" style="color: var(--color-light);">
+            <div class="line-short"></div>
+            <div class="line-long"></div>
+            <div class="line-short"></div>
+        </div>
+
+        <div class="menu-section">
+            <div class="menu-category">
+                <h3 class="eyebrow">VIENNOISERIES & PÃES</h3>
+                <div class="menu-list">
+                    <div class="menu-item">Croissant Tradicional R$ 14</div>
+                    <div class="menu-item">Pain au Chocolat R$ 16</div>
+                    <div class="menu-item">Espiral de Creme e Chocolate R$ 18</div>
+                    <div class="menu-item">Baguette Francesa R$ 12</div>
+                    <div class="menu-item">Sourdough Clássico (Inteiro) R$ 32</div>
+                    <div class="menu-item">Focaccia de Alecrim R$ 22</div>
+                </div>
+            </div>
+
+            <div class="menu-category" style="margin-top: 80px;">
+                <h3 class="eyebrow">BRUNCH & CAFÉ</h3>
+                <div class="menu-list">
+                    <div class="menu-item">Toast de Abacate R$ 35</div>
+                    <div class="menu-item">Croque Monsieur R$ 42</div>
+                    <div class="menu-item">Espresso Duplo R$ 10</div>
+                    <div class="menu-item">Capuccino R$ 14</div>
+                    <div class="menu-item">Cold Brew R$ 16</div>
+                    <div class="menu-item">Suco Natural R$ 12</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário em nova seção para isolar -->
+    <section class="section-dark" id="contact" style="padding-top: 0; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div style="max-width: 500px; margin: 0 auto; text-align: center; margin-bottom: 40px;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Encomendas</h2>
+            <p style="font-size: 0.95rem; font-weight: 300; opacity: 0.8;">Para pedidos especiais ou eventos, deixe sua mensagem.</p>
+        </div>
+
+        <form class="contact-form">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Nome Completo">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="E-mail">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="O que você gostaria de encomendar?">
+            </div>
+            <div style="text-align: center;">
+                <button type="submit" class="btn-submit">Enviar Mensagem</button>
+            </div>
+        </form>
+    </section>
+
+</body>
+</html>
