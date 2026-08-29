@@ -9,7 +9,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap');
 
         :root {
-            --color-dark: #1a1a1a;
+            --color-dark: #4f5445;
+            --color-olive: #565c4d;
             --color-light: #ffffff;
             --color-cream: #f7f5f0;
             --color-accent: #3a3a3a;
@@ -183,16 +184,17 @@
             transform: translateX(-50%);
             width: 120px;
             height: 120px;
-            background-color: var(--color-cream);
-            color: var(--color-dark);
+            background-color: var(--color-olive);
+            color: var(--color-light);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: 700;
+            letter-spacing: 0.08em;
             line-height: 1.1;
             z-index: 110;
         }
@@ -202,7 +204,7 @@
             position: relative;
             width: 100%;
             height: 90vh;
-            background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80');
+            background-image: url('images/produto-croissant.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -347,15 +349,58 @@
             top: -40px; /* metade da altura do selo */
             width: 80px;
             height: 80px;
-            background-color: var(--color-dark);
-            color: var(--color-cream);
+            background-color: var(--color-olive);
+            color: var(--color-light);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             font-family: 'Playfair Display', serif;
-            font-size: 0.9rem;
+            font-size: 1.1rem;
+            letter-spacing: 0.06em;
             text-align: center;
+        }
+
+        /* Faixa de ícones estilo destaques */
+        .highlights-strip {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            padding: 60px 10% 20px;
+        }
+
+        .highlight-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            text-align: center;
+        }
+
+        .highlight-item .icon-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background-color: var(--color-olive);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .highlight-item .icon-circle svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--color-light);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .highlight-item span {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-text-body);
         }
 
 
@@ -583,7 +628,7 @@
     <!-- Header 2 camadas -->
     <div class="top-bar">
         <div class="top-bar-left">
-            <span>Rua Visconde de Cairú, 26 - Maracanã</span>
+            <span>Rua Visconde de Cairú, 26 - Loja C, Tijuca</span>
         </div>
         <div class="top-bar-right">
             <span>Ter - Dom, 08h às 20h</span>
@@ -593,7 +638,7 @@
 
     <nav class="main-nav">
         <div class="logo-badge">
-            ROMA<br>BAKERY
+            ROMA
         </div>
         <div class="nav-menu">
             <a href="#menu" class="nav-link">Cardápio</a>
@@ -618,11 +663,59 @@
         <div class="hero-content">
             <div class="hero-title-wrapper">
                 <div class="signature-line"></div>
-                <h1>Padaria artesanal no coração do Rio.</h1>
+                <h1>Quem tem boca vai à Roma.</h1>
             </div>
             <div class="hero-divider"></div>
             <div class="hero-text">
-                <p>Viennoiseries, pães de fermentação natural e brunch servidos diariamente no Maracanã.</p>
+                <p>Panificação, confeitaria e empório artesanal na Tijuca. Viennoiseries e brunch feitos na hora, todos os dias.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faixa de destaques estilo Instagram -->
+    <section class="section-light" style="padding-bottom: 20px;">
+        <div class="highlights-strip">
+            <div class="highlight-item">
+                <div class="icon-circle">
+                    <svg viewBox="0 0 24 24"><path d="M4 21V10l8-6 8 6v11" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21v-7h6v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <span>Feito na Hora</span>
+            </div>
+            <div class="highlight-item">
+                <div class="icon-circle">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <span>Horários</span>
+            </div>
+            <div class="highlight-item">
+                <div class="icon-circle">
+                    <svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8" stroke-linecap="round"/><path d="M10.5 8v.01M10.5 13v-2.5" stroke-linecap="round"/></svg>
+                </div>
+                <span>Curiosidades</span>
+            </div>
+            <div class="highlight-item">
+                <div class="icon-circle">
+                    <svg viewBox="0 0 24 24"><path d="M4 8h16M6 8V4h12v4M6 8v12h12V8" stroke-linejoin="round"/><path d="M9 12h.01M13 12h.01M9 16h.01M13 16h.01" stroke-linecap="round"/></svg>
+                </div>
+                <span>Empório</span>
+            </div>
+            <div class="highlight-item">
+                <div class="icon-circle">
+                    <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.5-8.6C.6 8 2 4.5 5.3 4c2-.3 3.6.8 4.7 2.3C11 4.8 12.7 3.7 14.7 4c3.3.5 4.7 4 3.8 7.4C16 15.6 12 20 12 20z"/><circle cx="7.5" cy="9" r="1"/><circle cx="10.5" cy="7" r="1"/><circle cx="13.5" cy="7" r="1"/><circle cx="16.5" cy="9" r="1"/></svg>
+                </div>
+                <span>Pet Friendly</span>
+            </div>
+            <div class="highlight-item">
+                <div class="icon-circle">
+                    <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.5-8.6C.6 8 2 4.5 5.3 4c2-.3 3.6.8 4.7 2.3C11 4.8 12.7 3.7 14.7 4c3.3.5 4.7 4 3.8 7.4C16 15.6 12 20 12 20z"/></svg>
+                </div>
+                <span>Produtos</span>
+            </div>
+            <div class="highlight-item">
+                <div class="icon-circle">
+                    <svg viewBox="0 0 24 24"><path d="M12 21s7-6.4 7-11.5A7 7 0 105 9.5C5 14.6 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.2"/></svg>
+                </div>
+                <span>Localização</span>
             </div>
         </div>
     </section>
@@ -650,17 +743,17 @@
         <!-- Fotos Assimétricas -->
         <div class="asymmetric-gallery">
             <div class="asymmetric-col tall">
-                <img src="https://images.unsplash.com/photo-1596560370425-45a8e0f39385?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Processo de fermentação">
+                <img src="images/produto-pao.png" alt="Pão de fermentação natural">
             </div>
             <div class="asymmetric-col short">
-                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Café e Croissant">
+                <img src="images/fachada.png" alt="Fachada da Roma Bakery">
             </div>
         </div>
     </section>
 
     <!-- Transição Abrupta com Selo Repetido -->
     <div class="divider-badge-wrapper">
-        <div class="divider-badge">RB</div>
+        <div class="divider-badge">ROMA</div>
     </div>
 
     <!-- Seção Creme: Galeria de Produtos sem Cards -->
@@ -669,16 +762,16 @@
 
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1627915570222-38d5e893e230?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Croissant">
-                <div class="gallery-caption">Croissant Clássico na Manteiga</div>
+                <img src="images/produto-croissant-recheado.png" alt="Croissant recheado com presunto e queijo">
+                <div class="gallery-caption">Croissant Recheado</div>
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pão de Fermentação Natural">
-                <div class="gallery-caption">Pão de Fermentação Natural</div>
+                <img src="images/produto-torrada.png" alt="Torrada de ricota com tomate e pesto">
+                <div class="gallery-caption">Torrada de Ricota com Tomate e Pesto</div>
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1601000938259-9e92002320b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Espiral de Chocolate">
-                <div class="gallery-caption">Espiral de Creme e Chocolate Meio-Amargo</div>
+                <img src="images/produto-espiral-pistache.png" alt="Espiral de chocolate com pistache">
+                <div class="gallery-caption">Espiral de Chocolate com Pistache</div>
             </div>
         </div>
     </section>
