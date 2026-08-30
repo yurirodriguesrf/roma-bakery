@@ -1,0 +1,126 @@
+# Skills instaladas (MengTo/Skills)
+
+Skills de [MengTo/Skills](https://github.com/MengTo/Skills), categorias
+`web-design`, `ui`, `codex` e `media` (a categoria `game-development` foi
+deixada de fora por não se aplicar a estes repositórios). Pastas `demo/`
+(screenshots e vídeos de exemplo, ~76 MB) foram removidas — não são
+necessárias para a skill funcionar.
+
+- Origem: https://github.com/MengTo/Skills
+- Commit de origem: `321c769739b823de5eb94eb3a52aa1974fe783a2`
+- Licença: MIT (ver `LICENSE-mengto-skills`)
+
+## Skills disponíveis (112)
+
+- `add-mouse-driven-orbit`
+- `add-shader-cursor-trail`
+- `agency-grid-layout-minimal`
+- `ambient-section-particles`
+- `animation-on-scroll`
+- `animation-systems`
+- `article-prompts-to-skills`
+- `atmosphere-background`
+- `audit-ai-design-slop`
+- `audit-reference-originality`
+- `audit-verify-explain-grade-5`
+- `aura-asset-images`
+- `background-grid-webgl`
+- `beam-glow-states`
+- `beautiful-shadows`
+- `blue-cloudy-clean-modern`
+- `blue-laser-clean-glass-layout`
+- `book-serif-index`
+- `bright-green-tech-system-webgl`
+- `browser-video-recording`
+- `build-awwwards-quality-sites`
+- `build-daily-inspiration-sites`
+- `build-interactive-particle-trail`
+- `build-threejs-scroll-worlds`
+- `build-wireframe-scan-reveal`
+- `cinematic-gsap-lenis-motion-system`
+- `cinematic-scroll-storytelling`
+- `clean-minimal-beige-light-mode`
+- `cobejs`
+- `company-logos`
+- `container-lines`
+- `corner-diagonals`
+- `corner-lasers`
+- `css-alpha-masking`
+- `css-border-gradient`
+- `daily-ui-inspiration-capture`
+- `dark-blue-contrasting-clean`
+- `dark-glass-clean-layout`
+- `design-first-ui-prompting`
+- `dither-background`
+- `dither-laser-dark-mode`
+- `documentary-brutalist-agency`
+- `editorial-portfolio-chapters`
+- `editorial-service-booking`
+- `editorial-tech`
+- `elevenlabs-tts`
+- `falling-leaves`
+- `framed-grid-layout`
+- `framed-tech-dark-border-gradient`
+- `funky-purple-container-tech`
+- `generate-reference-inspired-brand-worlds`
+- `glass-dark-mode-clock`
+- `glass-dark-ui`
+- `globe-gl`
+- `globe-particles`
+- `gooey-blob-system`
+- `gsap-scrolltrigger-storytelling`
+- `gsap`
+- `high-contrast-skeuomorphic-clean`
+- `html-to-interaction-prompts`
+- `image-first-grid-layout`
+- `implement-fog-of-war`
+- `iterate-until-verified`
+- `landing-page`
+- `light-mode-paper-technical`
+- `liquid-metal-border`
+- `marquee-loop`
+- `masked-reveal`
+- `matterjs`
+- `mesh-gradient-dark-blue-clean`
+- `nested-container-clean-agency`
+- `nested-container-frames`
+- `no-ai-design-slop`
+- `number-details`
+- `operational-enterprise-ai`
+- `optimize-web-animations`
+- `orange-clean-paper-saas`
+- `performance-profiling`
+- `pointer-trail-emitter`
+- `pricing-page`
+- `product-proof-saas`
+- `progressive-blur`
+- `publish-project-to-github`
+- `reveal-hover-effect`
+- `scroll-progress-timeline`
+- `scroll-scrubbed-visual-sequence`
+- `scroll-scrubbed-word-reveal`
+- `scroll-world-storytelling`
+- `shaders-cursor-ripples`
+- `skeuomorphic-ui`
+- `solar-duotone-bold`
+- `split-layout-technical`
+- `staggered-word-reveal`
+- `stitched-full-page-capture`
+- `tailwindcss`
+- `tech-green-dark-mode-modern`
+- `technical-wireframe-info-layout`
+- `thinking-orbs`
+- `threejs-landscape`
+- `threejs-towers`
+- `threejs-weather`
+- `threejs`
+- `unicorn-studio`
+- `unsplash-asset-images`
+- `vantajs`
+- `video-to-superprompt`
+- `web-technique-to-skill`
+- `webgl-3d-object`
+- `webgl-landing-steering`
+- `webgl-laser`
+- `write-like-meng-on-x`
+- `x-bookmark-quote-posts`
